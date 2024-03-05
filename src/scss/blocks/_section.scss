@@ -1,0 +1,285 @@
+.plans-pricing {
+    position: relative;
+    padding: 41px 0 69px;
+    overflow: hidden;
+
+    @media (max-width: 991.98px) {
+        padding: 41px 0 64px;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 150%;
+        color: $dark-blue;
+
+        @media (max-width: 575.98px) {
+            letter-spacing: -1px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 122px;
+        margin-bottom: 90px;
+        padding-right: 10px;
+
+        @media (max-width: 991.98px) {
+            gap: 70px;
+            padding-right: 0;
+        }
+
+        @media (max-width: 767.98px) {
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 150%;
+        color: #848199;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 22px;
+    }
+
+    &__btn {
+        padding: 13px 32px;
+        font-size: 12px;
+        line-height: 150%;
+        letter-spacing: 0.833333px;
+        color: #3B3472;
+        border-radius: 22px;
+        background-color: transparent;
+        pointer-events: auto;
+        transition: 0.3s ease-in-out;
+
+        &_active {
+            padding: 13px 24px;
+            background-color: $purple;
+            box-shadow: 0px 6px 12px rgba(82, 67, 194, 0.16);
+            color: $white;
+            pointer-events: none;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        padding: 40px 45px 40px 68px;
+        background-color: rgba(255, 255, 255, 0.64);
+        border-radius: 26px;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.8s ease-in-out;
+
+        &_active {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 991.98px) {
+            padding: 32px 28px 8px;
+        }
+    }
+
+    &__items-monthly,
+    &__items-yearly {
+        display: flex;
+        justify-content: space-between;
+        gap: 34px;
+
+        @media (max-width: 991.98px) {
+            gap: 24px;
+        }
+
+        @media (max-width: 767.98px) {
+            flex-direction: column;
+            gap: 48px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 0 1 232px;
+
+        &_active {
+            position: relative;
+            flex: 0 1 292px;
+            padding: 0 30px;
+            z-index: 1;
+
+            @media (max-width: 767.98px) {
+                flex: 0 1 272px;
+                padding: 20px 0;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -67px;
+                left: 0;
+                width: 100%;
+                height: calc(100% + 67px + 20px);
+                background-color: $dark-blue;
+                box-shadow: 0px 42px 34px rgba(82, 67, 194, 0.295755);
+                border-radius: 26px;
+                z-index: -1;
+
+                @media (max-width: 767.98px) {
+                    top: 0;
+                    height: 100%;
+                    width: calc(100% + 40px);
+                    left: -20px;
+                }
+            }
+
+            .plans-pricing__item-popular {
+                position: absolute;
+                top: -47px;
+                right: 30px;
+                padding: 6px 17px;
+                background-color: #403879;
+                border-radius: 13.5px;
+                font-weight: 800;
+                font-size: 10px;
+                line-height: 150%;
+                text-align: center;
+                letter-spacing: 0.833333px;
+                color: $purple;
+
+                @media (max-width: 767.98px) {
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-bottom: 20px;
+                }
+            }
+
+            .plans-pricing__item-price-num,
+            .plans-pricing__item-price-text,
+            .plans-pricing__item-title,
+            .plans-pricing__item-text,
+            .plans-pricing__item-list-text {
+                color: $white;
+            }
+
+            .plans-pricing__item-list-round {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .plans-pricing__item-btn {
+                max-width: 100%;
+                background-color: $purple;
+                color: $white;
+            }
+        }
+    }
+
+    &__item-price {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+        margin-bottom: 20px;
+    }
+
+    &__item-price-num {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 128%;
+        color: $dark-blue;
+    }
+
+    &__item-price-text {
+        font-size: 17px;
+        line-height: 153%;
+        color: #848199;
+    }
+
+    &__item-body {
+        margin-bottom: 23px;
+
+        @media (max-width: 767.98px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 6px;
+        font-size: 28px;
+        line-height: 150%;
+        color: $dark-blue;
+    }
+
+    &__item-text {
+        margin-bottom: 15px;
+        font-size: 15px;
+        line-height: 147%;
+        color: #848199;
+    }
+
+    &__item-lists {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__item-list {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__item-list-round {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        background-color: rgba(82, 67, 194, 0.15);
+        border-radius: 50%;
+    }
+
+    &__item-list-svg {
+        max-width: 12px;
+        max-height: 10px;
+    }
+
+    &__item-list-text {
+        font-size: 15px;
+        line-height: 147%;
+        color: #848199;
+    }
+
+    &__item-btn {
+        max-width: 207px;
+        padding: 11px;
+        background-color: $dark-blue;
+        mix-blend-mode: normal;
+        border-radius: 24px;
+        font-size: 15px;
+        line-height: 147%;
+        text-align: center;
+        color: $white;
+
+        @media (max-width: 767.98px) {
+            max-width: 100%;
+        }
+    }
+}

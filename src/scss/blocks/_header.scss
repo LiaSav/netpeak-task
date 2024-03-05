@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1366px;
+    height: 94px;
+    padding: 0 50px;
+    margin: 0 auto;
+
+    @media (max-width: 991.98px) {
+        padding: 0 24px;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 31px;
+        cursor: pointer;
+    }
+
+    &__nav-svg {
+        max-width: 23px;
+        max-height: 15px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        max-width: 140px;
+        max-height: 30px;
+        cursor: pointer;
+    }
+
+    &__logo-svg {
+        max-width: 138px;
+        max-height: 30px;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 124px;
+        padding: 10px 30px;
+        background-color: $purple;
+        border-radius: 25px;
+        font-size: 14px;
+        line-height: 129%;
+        color: $white;
+
+        @media (max-width: 767.98px) {
+            display: none;
+        }
+    }
+}

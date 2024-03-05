@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>netpeak-task</title>
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+    <nav class="header__nav">
+        <svg class="header__nav-svg">
+            <use xlink:href="sprite-svg/sprite.svg#header__nav-svg">
+            </use>
+        </svg>
+    </nav>
+    <a class="header__logo" href="index.html">
+        <svg class="header__logo-svg">
+            <use xlink:href="sprite-svg/sprite.svg#header__logo-svg">
+            </use>
+        </svg>
+    </a>
+    <button class="header__button">Join Now</button>
+</header>
+
+        <main class="main">
+            <section class="plans-pricing">
+    <h1 class="plans-pricing__title">Plans & Pricing</h1>
+    <div class="plans-pricing__row">
+        <div class="plans-pricing__text">Whether your time-saving automation needs are large or small, we're here to
+            help you scale.</div>
+        <div class="plans-pricing__buttons">
+            <button class="plans-pricing__btn plans-pricing__btn_active" data-for-tab="monthly">MONTHLY</button>
+            <button class="plans-pricing__btn" data-for-tab="yearly">YEARLY</button>
+        </div>
+    </div>
+
+    <div class="plans-pricing__content plans-pricing__content_active" data-tab="monthly">
+        <div class="plans-pricing__items-monthly"></div>
+    </div>
+
+    <div class="plans-pricing__content" data-tab="yearly">
+        <div class="plans-pricing__items-yearly"></div>
+    </div>
+
+</section>
+        </main>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
