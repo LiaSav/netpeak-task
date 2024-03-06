@@ -77,15 +77,12 @@
         padding: 40px 45px 40px 68px;
         background-color: rgba(255, 255, 255, 0.64);
         border-radius: 26px;
-        position: absolute;
-        opacity: 0;
+        display: none;
         visibility: hidden;
         pointer-events: none;
-        transition: opacity 0.8s ease-in-out;
 
         &_active {
-            position: static;
-            opacity: 1;
+            display: block;
             visibility: visible;
             pointer-events: auto;
         }

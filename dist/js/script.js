@@ -2,8 +2,9 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
-    const plansPricing = document.querySelector('.plans-pricing');
-    const itemsMonthlyWrapper = plansPricing.querySelector('.plans-pricing__items-monthly');
+    const plansPricing = document.querySelector('.plans-pricing'),
+        itemsMonthlyWrapper = plansPricing.querySelector('.plans-pricing__items-monthly'),
+        itemsYearlyWrapper = plansPricing.querySelector('.plans-pricing__items-yearly');
 
     const itemsMonthly = [
         {
@@ -83,45 +84,6 @@ window.addEventListener('DOMContentLoaded', () => {
         },
     ];
 
-    function createItemsMonthly(size) {
-        itemsMonthlyWrapper.innerHTML = Array.from(Array(size).keys()).map((key, index) => (
-            `<div class="plans-pricing__item ${(size - 1) === index ? 'plans-pricing__item_active' : ''}">
-                <div class="plans-pricing__item-top">
-                    <div class="plans-pricing__item-popular" style="display: ${(size - 1) === index ? 'inline-block' : 'none'};">
-                        <div class="plans-pricing__item-popular-text">MOST POPULAR</div>
-                    </div>
-                    <div class="plans-pricing__item-price">
-                        <div class="plans-pricing__item-price-num">${itemsMonthly[key].priceNum}</div>
-                        <div class="plans-pricing__item-price-text">${itemsMonthly[key].priceText}</div>
-                    </div>
-                    <div class="plans-pricing__item-body">
-                        <div class="plans-pricing__item-title">${itemsMonthly[key].title}</div>
-                        <div class="plans-pricing__item-text">${itemsMonthly[key].text}</div>
-                        <ul class="plans-pricing__item-lists">
-                            ${itemsMonthly[key].lists.map(list => `
-                                <li class="plans-pricing__item-list">
-                                    <div class="plans-pricing__item-list-round">
-                                        <svg class="plans-pricing__item-list-svg">
-                                            <use xlink:href="${(size - 1) === index ? `${list.useXlinkHref}-white` : `${list.useXlinkHref}`}"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="plans-pricing__item-list-text">${list.text}</div>
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                </div>
-                <button class="plans-pricing__item-btn btn-hover">${itemsMonthly[key].btn}</button>
-            </div>`
-        )).join('');
-    }
-
-    createItemsMonthly(itemsMonthly.length);
-
-
-
-    const itemsYearlyWrapper = plansPricing.querySelector('.plans-pricing__items-yearly');
-
     const itemsYearly = [
         {
             priceNum: '$12',
@@ -200,22 +162,22 @@ window.addEventListener('DOMContentLoaded', () => {
         },
     ];
 
-    function createItemsYearly(size) {
-        itemsYearlyWrapper.innerHTML = Array.from(Array(size).keys()).map((key, index) => (
+    function createItems(wrapper, size, itemsArr) {
+        wrapper.innerHTML = Array.from(Array(size).keys()).map((key, index) => (
             `<div class="plans-pricing__item ${(size - 1) === index ? 'plans-pricing__item_active' : ''}">
                 <div class="plans-pricing__item-top">
                     <div class="plans-pricing__item-popular" style="display: ${(size - 1) === index ? 'inline-block' : 'none'};">
                         <div class="plans-pricing__item-popular-text">MOST POPULAR</div>
                     </div>
                     <div class="plans-pricing__item-price">
-                        <div class="plans-pricing__item-price-num">${itemsYearly[key].priceNum}</div>
-                        <div class="plans-pricing__item-price-text">${itemsYearly[key].priceText}</div>
+                        <div class="plans-pricing__item-price-num">${itemsArr[key].priceNum}</div>
+                        <div class="plans-pricing__item-price-text">${itemsArr[key].priceText}</div>
                     </div>
                     <div class="plans-pricing__item-body">
-                        <div class="plans-pricing__item-title">${itemsYearly[key].title}</div>
-                        <div class="plans-pricing__item-text">${itemsYearly[key].text}</div>
+                        <div class="plans-pricing__item-title">${itemsArr[key].title}</div>
+                        <div class="plans-pricing__item-text">${itemsArr[key].text}</div>
                         <ul class="plans-pricing__item-lists">
-                            ${itemsYearly[key].lists.map(list => `
+                            ${itemsArr[key].lists.map(list => `
                                 <li class="plans-pricing__item-list">
                                     <div class="plans-pricing__item-list-round">
                                         <svg class="plans-pricing__item-list-svg">
@@ -228,14 +190,13 @@ window.addEventListener('DOMContentLoaded', () => {
                         </ul>
                     </div>
                 </div>
-                <button class="plans-pricing__item-btn btn-hover">${itemsYearly[key].btn}</button>
+                <button class="plans-pricing__item-btn btn-hover">${itemsArr[key].btn}</button>
             </div>`
         )).join('');
     }
 
-    createItemsYearly(itemsYearly.length);
-
-
+    createItems(itemsMonthlyWrapper, itemsMonthly.length, itemsMonthly);
+    createItems(itemsYearlyWrapper, itemsYearly.length, itemsYearly);
 
 
     const buttonsWrapper = plansPricing.querySelector('.plans-pricing__buttons'),
@@ -256,11 +217,11 @@ window.addEventListener('DOMContentLoaded', () => {
         });
 
         contents.forEach(content => {
-            content.classList.remove('plans-pricing__content_active');
+            content.classList.remove('plans-pricing__content_active', 'fade');
         });
 
         btnToActive.classList.add('plans-pricing__btn_active');
-        contentToActive.classList.add('plans-pricing__content_active');
+        contentToActive.classList.add('plans-pricing__content_active', 'fade');
     }
 
 });

@@ -58,3 +58,17 @@ svg {
         background-color: #A847CC !important;
     }
 }
+
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
