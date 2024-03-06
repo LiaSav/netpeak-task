@@ -50,3 +50,11 @@ svg {
         padding: 0 16px;
     }
 }
+
+.btn-hover {
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #A847CC !important;
+    }
+}

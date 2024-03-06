@@ -111,7 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         </ul>
                     </div>
                 </div>
-                <button class="plans-pricing__item-btn">${itemsMonthly[key].btn}</button>
+                <button class="plans-pricing__item-btn btn-hover">${itemsMonthly[key].btn}</button>
             </div>`
         )).join('');
     }
@@ -228,7 +228,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         </ul>
                     </div>
                 </div>
-                <button class="plans-pricing__item-btn">${itemsYearly[key].btn}</button>
+                <button class="plans-pricing__item-btn btn-hover">${itemsYearly[key].btn}</button>
             </div>`
         )).join('');
     }
